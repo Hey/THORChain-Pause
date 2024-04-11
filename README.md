@@ -15,19 +15,19 @@ To build the THORChain Pause binary, follow these steps:
 2. Clone this repository to your local machine:
 
 ```sh
-git clone <repository-url>
+git clone https://github.com/Hey/THORChain-Pause
 ```
 
 Navigate to the root directory of the cloned repository:
 
 ```sh
-cd <repository-directory>
+cd THORChain-Pause
 ```
 
 Build the binary using the go build command:
 
 ```sh
-go build -o thorchain-pause-bot
+go build -o thorchain-pause
 ```
 
 After building, you will find the thorchain-pause-bot executable file in the current directory.
@@ -47,7 +47,7 @@ Then open the .env file and set the following environment variables:
 Once the environment variables are set, you can run the THORChain Pause binary. Here's an example command:
 
 ```sh
-./thorchain-pause-bot
+./thorchain-pause
 ```
 
 By default, the server will start on port 8080. You can access the pause endpoint at http://localhost:8080/pause/{password}.
