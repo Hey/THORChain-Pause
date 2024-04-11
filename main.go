@@ -13,6 +13,7 @@ import (
 type Config struct {
 	Password string
 	MakeCWD  string
+	Port     string
 }
 
 var config Config
@@ -34,9 +35,15 @@ func main() {
 }
 
 func loadConfig() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	config = Config{
 		Password: os.Getenv("PASSWORD"),
 		MakeCWD:  os.Getenv("MAKE_CWD"),
+		Port:     port,
 	}
 	if config.Password == "" || config.MakeCWD == "" {
 		log.Fatal("PASSWORD and MAKE_CWD environment variables are required")
